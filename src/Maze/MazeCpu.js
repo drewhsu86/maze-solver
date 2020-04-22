@@ -92,29 +92,36 @@ export default class MazeCpu extends Component {
 
     return (
       <div className="mazeCpu">
+        <h1>Watch the CPU solve!</h1>
         <MazeDisplay
           colorCode={colorCode}
           mazeArr={this.state.mazeArr}
           showNum
         />
-        <button
-          onClick={e => this.handleClickMaze(e, this.state.mazeOrig)}>
-          Reset
+        <div className="infoPanel">
+          <button
+            onClick={e => this.handleClickMaze(e, this.state.mazeOrig)}>
+            Reset
         </button>
-        <button
-          onClick={e => this.handleClickMaze(e, this.state.mazeOrig, 'd')}>
-          Computer Solved (DFS)
+          <button
+            onClick={e => this.handleClickMaze(e, this.state.mazeOrig, 'd')}>
+            Computer Solved (DFS)
         </button>
-        <button
-          onClick={e => this.handleClickMaze(e, this.state.mazeOrig, 'b')}>
-          Computer Solved (BFS)
+          <button
+            onClick={e => this.handleClickMaze(e, this.state.mazeOrig, 'b')}>
+            Computer Solved (BFS)
         </button>
-        <p className="infoBox">
-          {typeof this.state.numVisited === 'number' ? `Spaces checked: ${this.state.numVisited}` : null}
-        </p>
-        <p className="infoBox">
-          {typeof this.state.numPathLen === 'number' ? `Spaces used: ${this.state.numPathLen - 2}` : null}
-        </p>
+        </div>
+
+        <div className="infoPanel">
+          <p className="infoBox">
+            {typeof this.state.numVisited === 'number' ? `Spaces checked: ${this.state.numVisited} ` : null}
+          </p>
+          <p className="infoBox">
+            {typeof this.state.numPathLen === 'number' ? `Spaces used: ${this.state.numPathLen - 2} ` : null}
+          </p>
+        </div>
+
       </div>
     )
   }

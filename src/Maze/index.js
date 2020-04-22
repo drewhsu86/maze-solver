@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Maze.css'
 
+
 import MazeArrays from './MazeArrays'
 import MazeCpu from './MazeCpu'
 import MazeHuman from './MazeHuman'
@@ -12,7 +13,7 @@ export default class index extends Component {
     super()
     this.state = {
       colorCode: ['white', 'grey', 'green', 'red', 'lightblue', 'lightpink', 'lightyellow'],
-      mazeArr: MazeArrays(0)[0]
+      mazeArr: MazeArrays()
     }
   }
 
@@ -36,7 +37,9 @@ export default class index extends Component {
   // handlers 
   // ====================
 
-
+  handleClickReload = () => {
+    window.location.reload(false)
+  }
 
   // ====================
   // render 
@@ -44,12 +47,20 @@ export default class index extends Component {
   render() {
 
     return (
-      <div
-        className="mazeIndex">
+      <div>
+        <nav>
+          <div onClick={this.handleClickReload}>
+            <h2> Refresh to try a random maze! </h2>
+          </div>
+        </nav>
 
-        <MazeHuman mazeArr={this.state.mazeArr} />
+        <div
+          className="mazeIndex">
 
-        <MazeCpu mazeArr={this.state.mazeArr} />
+          <MazeHuman mazeArr={this.state.mazeArr} />
+
+          <MazeCpu mazeArr={this.state.mazeArr} />
+        </div>
       </div>
     )
   }

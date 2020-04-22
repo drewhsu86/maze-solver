@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MazeDisplay from './MazeDisplay'
-import { findEnds, cardinalNeighbors } from './MazeAlgorithms'
+import { findEnds } from './MazeAlgorithms'
 
 export default class MazeHuman extends Component {
   constructor(props) {
@@ -199,34 +199,42 @@ export default class MazeHuman extends Component {
     const colorCode = this.props.colorCode ? this.props.colorCode : ['white', 'grey', 'green', 'red', 'lightblue', 'lightpink', 'lightyellow']
 
     return (
-      <div className="mazeHuman">
-
+      <div className="mazeHuman" >
+        <h1>Solve this maze!</h1>
         <MazeDisplay
           colorCode={colorCode}
           mazeArr={this.state.mazeArr}
         />
 
-        <button
-          onClick={this.handleClickReset}>
-          Reset
+        <div className="infoPanel">
+          <button
+            onClick={this.handleClickReset}>
+            Reset
         </button>
 
-        <input
-          className='controller'
-          type='text'
-          onChange={this.handleOnchange}
-          value='(  ^-^)> Click here and wasd'
-          onKeyPress={this.handleKeypress}
-          placeholder='Controller'
-        />
-        <p className='errMsg'>
-          Number of steps taken: {this.state.currCount}
-        </p>
+          <input
+            className='controller'
+            type='text'
+            onChange={this.handleOnchange}
+            value=''
+            onKeyPress={this.handleKeypress}
+            placeholder='Controller'
+          />
+          <div
+            className="controllerDirections">
+            Click Inside The Gradient And Use WASD Keys
+          </div>
+        </div>
 
-        <p className='errMsg'>
-          {this.state.errMsg ? this.state.errMsg : null}
-        </p>
+        <div className="infoPanel">
+          <p className='errMsg'>
+            Number of steps taken: {this.state.currCount}
+          </p>
 
+          <p className='errMsg'>
+            {this.state.errMsg ? this.state.errMsg : null}
+          </p>
+        </div>
       </div>
     )
   }

@@ -1,12 +1,40 @@
+nav {
+  background-color: black;
+  color: white;
+  padding: 10px 30px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+button {
+  background-color: #333333;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 5px 10px;
+  
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 0px;
+}
+
 .mazeIndex {
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .mazeDisplay {
   background-color: none;
   display: flex;
   flex-direction: column;
+  margin: 30px;
 } 
 
 .mazeRow {
@@ -21,4 +49,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.mazeHuman, .mazeCpu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.infoPanel {
+  display: flex;
+}
+
+.infoBox {
+  margin: 5px 10px;
+}
+
+.controller {
+  background-image: radial-gradient(red, blue);
+  width: 50px;
+  height: 50px;
+  margin: 5px 10px;
+}
+
+.controllerDirections {
+  font-size: 10px;
+  font-weight: bold;
+  width: 70px;
+  height: 40px;
+  margin: 5px 10px
 }
