@@ -1,0 +1,24 @@
+.mazeIndex {
+  width: 100%;
+  height: 100%;
+}
+
+.mazeDisplay {
+  background-color: none;
+  display: flex;
+  flex-direction: column;
+} 
+
+.mazeRow {
+  display: flex;
+}
+
+.mazeTile {
+  background-color: white;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
